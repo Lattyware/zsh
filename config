@@ -4,12 +4,16 @@ CONFIG_PATH="${XDG_CONFIG_HOME:-${HOME}/.config}/zsh"
 HISTFILE=${CONFIG_PATH}/history
 HISTSIZE=100000
 SAVEHIST=100000
+setopt INC_APPEND_HISTORY
 
 # Allow extended globbing.
 setopt extendedglob nomatch
 
 # Set Emacs style keys.
 bindkey -e
+# Ctrl+Left/Right to navigate words.
+bindkey -- "^[[1;5D" backward-word
+bindkey -- "^[[1;5C" forward-word
 
 # Prompt theming.
 fpath=("${CONFIG_PATH}/fpath" "$fpath[@]")
