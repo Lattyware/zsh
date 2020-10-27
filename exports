@@ -1,0 +1,3 @@
+# Use nano as the default editor.
+export EDITOR="/bin/nano"
+

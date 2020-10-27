@@ -1,0 +1,11 @@
+# This just tries to load the actual config from the directory.
+# This should be symlinked to ~/.zshrc during installation (`ln -s /path/to/this/file/rc ~/.zshrc`).
+# See `config` for the file this loads.
+
+CONFIG_PATH="${XDG_CONFIG_HOME:-${HOME}/.config}/zsh/config"
+
+if [ -f ${CONFIG_PATH} ]; then
+  source ${CONFIG_PATH}
+else
+  echo "Could not find ZSH configuration at ${CONFIG_PATH}."
+fi

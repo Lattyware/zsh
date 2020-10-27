@@ -1,0 +1,3 @@
+[submodule "prompts/spaceship"]
+	path = prompts/spaceship
+	url = https://github.com/denysdovhan/spaceship-prompt.git
