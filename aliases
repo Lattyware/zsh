@@ -1,3 +1,8 @@
-alias ls="ls --color=auto --human-readable --group-directories-first --classify"
 alias rm="rm -iv --preserve-root"
 alias grep="grep --color=auto"
+
+if ! type "exa" > /dev/null; then
+  alias ls="ls --color=auto --human-readable --group-directories-first --classify"
+else
+  alias ls="exa --long --git --classify --icons --group-directories-first"
+fi
