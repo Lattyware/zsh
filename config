@@ -14,6 +14,10 @@ bindkey -e
 # Ctrl+Left/Right to navigate words.
 bindkey -- "^[[1;5D" backward-word
 bindkey -- "^[[1;5C" forward-word
+# Fix keys that don't work correctly.
+bindkey -- "^[[H" beginning-of-line
+bindkey -- "^[[F" end-of-line
+bindkey -- "^[[3~" delete-char
 
 # Prompt theming.
 fpath=("${CONFIG_PATH}/fpath" "$fpath[@]")
@@ -78,12 +82,10 @@ setopt AUTO_PARAM_SLASH
 unsetopt AUTO_REMOVE_SLASH
 
 # History searching.
-autoload -Uz up-line-or-beginning-search down-line-or-beginning-search
-zle -N up-line-or-beginning-search
-zle -N down-line-or-beginning-search
+source ${CONFIG_PATH}/tools/zsh-history-substring-search/zsh-history-substring-search.zsh
 
-[[ -n "${key[Up]}" ]] && bindkey -- "${key[Up]}" up-line-or-beginning-search
-[[ -n "${key[Down]}" ]] && bindkey -- "${key[Down]}" down-line-or-beginning-search
+bindkey -- "^[[A" history-substring-search-up
+bindkey -- "^[[B" history-substring-search-down
 
 # Set up system path.
 typeset -U PATH path # Discard duplicates.

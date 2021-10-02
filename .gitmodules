@@ -1,3 +1,6 @@
 [submodule "prompts/spaceship"]
 	path = prompts/spaceship
 	url = https://github.com/denysdovhan/spaceship-prompt.git
+[submodule "tools/zsh-history-substring-search"]
+	path = tools/zsh-history-substring-search
+	url = https://github.com/zsh-users/zsh-history-substring-search.git

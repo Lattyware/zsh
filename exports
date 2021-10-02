@@ -1,3 +1,5 @@
 # Use nano as the default editor.
 export EDITOR="/bin/nano"
 
+# Should be reasonable for any emulator I'm going to use.
+export TERM="xterm-256color"
