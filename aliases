@@ -4,7 +4,7 @@ alias grep="grep --color=auto"
 if ! type "exa" > /dev/null; then
   alias ls="ls -l --color=auto --human-readable --group-directories-first --classify"
 else
-  if exa --git; then
+  if exa --git > /dev/null 2>&1; then
     alias ls="exa --long --git --classify --icons --group-directories-first"
   else
     alias ls="exa --long --classify --icons --group-directories-first"

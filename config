@@ -49,15 +49,12 @@ SPACESHIP_PROMPT_ORDER=(
   gcloud        # Google Cloud Platform section
   venv          # virtualenv section
   conda         # conda virtualenv section
-  pyenv         # Pyenv section
   dotnet        # .NET section
-  ember         # Ember.js section
   kubectl       # Kubectl context section
   terraform     # Terraform workspace section
   exec_time     # Execution time
   line_sep      # Line break
   battery       # Battery level and status
-  vi_mode       # Vi-mode indicator
   jobs          # Background jobs indicator
   exit_code     # Exit code section
   char          # Prompt character
@@ -84,8 +81,8 @@ unsetopt AUTO_REMOVE_SLASH
 # History searching.
 source ${CONFIG_PATH}/tools/zsh-history-substring-search/zsh-history-substring-search.zsh
 
-bindkey -- "^[[A" history-substring-search-up
-bindkey -- "^[[B" history-substring-search-down
+bindkey -- "^[OA" history-substring-search-up
+bindkey -- "^[OB" history-substring-search-down
 
 # Set up system path.
 typeset -U PATH path # Discard duplicates.
