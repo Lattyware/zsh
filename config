@@ -91,6 +91,20 @@ export PATH
 
 # Add exports
 source ${CONFIG_PATH}/exports
+if [ -f ${CONFIG_PATH}/exports.local ]; then
+  source ${CONFIG_PATH}/exports.local
+fi
 
 # Add aliases
 source ${CONFIG_PATH}/aliases
+if [ -f ${CONFIG_PATH}/aliases.local ]; then
+  source ${CONFIG_PATH}/aliases.local
+fi
+
+. ~/ssh-add.sh >/dev/null 2>&1
+
+if type "tmux" > /dev/null; then
+  case $- in *i*)
+    [ -z "$TMUX" ] && exec tmux
+  esac
+fi

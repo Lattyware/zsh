@@ -4,9 +4,9 @@ alias grep="grep --color=auto"
 if ! type "exa" > /dev/null; then
   alias ls="ls -l --color=auto --human-readable --group-directories-first --classify"
 else
-  if exa --git > /dev/null 2>&1; then
-    alias ls="exa --long --git --classify --icons --group-directories-first"
-  else
-    alias ls="exa --long --classify --icons --group-directories-first"
-  fi
+  alias ls='eza --long --git --classify --icons'
+fi
+
+if type "zoxide" > /dev/null; then
+  eval "$(zoxide init zsh --cmd cd)"
 fi
