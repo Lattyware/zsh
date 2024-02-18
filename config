@@ -6,6 +6,12 @@ HISTSIZE=100000
 SAVEHIST=100000
 setopt INC_APPEND_HISTORY
 
+# Add exports
+source ${CONFIG_PATH}/exports
+if [ -f ${CONFIG_PATH}/exports.local ]; then
+  source ${CONFIG_PATH}/exports.local
+fi
+
 # Allow extended globbing.
 setopt extendedglob nomatch
 
@@ -17,6 +23,8 @@ bindkey -- "^[[1;5C" forward-word
 # Fix keys that don't work correctly.
 bindkey -- "^[[H" beginning-of-line
 bindkey -- "^[[F" end-of-line
+bindkey -- "^[[1~" beginning-of-line
+bindkey -- "^[[4~" end-of-line
 bindkey -- "^[[3~" delete-char
 
 # Prompt theming.
@@ -24,45 +32,7 @@ fpath=("${CONFIG_PATH}/fpath" "$fpath[@]")
 autoload -Uz promptinit
 promptinit
 
-SPACESHIP_TIME_SHOW=true
-SPACESHIP_KUBECTL_SHOW=true
-SPACESHIP_EXIT_CODE_SHOW=true
-SPACESHIP_PROMPT_ORDER=(
-  user          # Username section
-  dir           # Current directory section
-  host          # Hostname section
-  git           # Git section (git_branch + git_status)
-  hg            # Mercurial section (hg_branch  + hg_status)
-  package       # Package version
-  node          # Node.js section
-  ruby          # Ruby section
-  elixir        # Elixir section
-  xcode         # Xcode section
-  swift         # Swift section
-  golang        # Go section
-  php           # PHP section
-  rust          # Rust section
-  haskell       # Haskell Stack section
-  julia         # Julia section
-  docker        # Docker section
-  aws           # Amazon Web Services section
-  gcloud        # Google Cloud Platform section
-  venv          # virtualenv section
-  conda         # conda virtualenv section
-  dotnet        # .NET section
-  kubectl       # Kubectl context section
-  terraform     # Terraform workspace section
-  exec_time     # Execution time
-  line_sep      # Line break
-  battery       # Battery level and status
-  jobs          # Background jobs indicator
-  exit_code     # Exit code section
-  char          # Prompt character
-)
-SPACESHIP_RPROMPT_ORDER=(
-  time
-)
-prompt spaceship
+eval "$(starship init zsh)"
 
 # Completion.
 zstyle ':completion:*' menu select
@@ -83,17 +53,13 @@ source ${CONFIG_PATH}/tools/zsh-history-substring-search/zsh-history-substring-s
 
 bindkey -- "^[OA" history-substring-search-up
 bindkey -- "^[OB" history-substring-search-down
+bindkey '^[[A' history-substring-search-up
+bindkey '^[[B' history-substring-search-down
 
 # Set up system path.
 typeset -U PATH path # Discard duplicates.
 path=("$path[@]")
 export PATH
-
-# Add exports
-source ${CONFIG_PATH}/exports
-if [ -f ${CONFIG_PATH}/exports.local ]; then
-  source ${CONFIG_PATH}/exports.local
-fi
 
 # Add aliases
 source ${CONFIG_PATH}/aliases

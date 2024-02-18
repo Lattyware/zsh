@@ -6,3 +6,6 @@ export TERM="xterm-256color"
 
 # Use BuildKit, it's good.
 export DOCKER_BUILDKIT=1
+
+# Prompt config.
+export STARSHIP_CONFIG="${CONFIG_PATH}/starship.toml"

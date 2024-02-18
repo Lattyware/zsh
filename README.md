@@ -9,6 +9,7 @@ I'd suggest forking this repo rather than using it directly if you do want to us
 Install process:
 
   - Install `zsh`, e.g: `sudo apt install zsh zsh-doc`
-  - Grab the repository: `git clone --recursive https://github.com/Lattyware/zsh.git "${XDG_CONFIG_HOME:-${HOME}/.config}/zsh"`
+  - Grab the repository: `git clone --recursive git@github.com:Lattyware/zsh.git "${XDG_CONFIG_HOME:-${HOME}/.config}/zsh"`
+  - Install starship: https://starship.rs
   - Link the main script: `ln -s "${XDG_CONFIG_HOME:-${HOME}/.config}/zsh/rc" "${HOME}/.zshrc"`
   - Set your user's default shell to zsh: `sudo usermod --shell "$(which zsh)" "$(whoami)"`

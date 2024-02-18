@@ -1,0 +1,19 @@
+"$schema" = 'https://starship.rs/config-schema.json'
+
+right_format="""$time"""
+
+[aws]
+disabled=true
+
+[gcloud]
+disabled=true
+
+[cmd_duration]
+min_time=500
+
+[status]
+disabled=false
+
+[time]
+disabled=false
+format='[$time]($style)'
