@@ -17,3 +17,6 @@ disabled=false
 [time]
 disabled=false
 format='[$time]($style)'
+
+[directory]
+truncation_length = 10
