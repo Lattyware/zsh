@@ -1,7 +1,7 @@
 alias rm="rm -iv --preserve-root"
 alias grep="grep --color=auto"
 
-if ! type "exa" > /dev/null; then
+if ! type "eza" > /dev/null; then
   alias ls="ls -l --color=auto --human-readable --group-directories-first --classify"
 else
   alias ls='eza --long --git --classify --icons'

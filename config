@@ -12,6 +12,12 @@ if [ -f ${CONFIG_PATH}/exports.local ]; then
   source ${CONFIG_PATH}/exports.local
 fi
 
+# Set up system path.
+typeset -U PATH path # Discard duplicates.
+path=("$path[@]")
+path+=("${HOME}/.local/bin")
+export PATH
+
 # Allow extended globbing.
 setopt extendedglob nomatch
 
@@ -55,11 +61,6 @@ bindkey -- "^[OA" history-substring-search-up
 bindkey -- "^[OB" history-substring-search-down
 bindkey '^[[A' history-substring-search-up
 bindkey '^[[B' history-substring-search-down
-
-# Set up system path.
-typeset -U PATH path # Discard duplicates.
-path=("$path[@]")
-export PATH
 
 # Add aliases
 source ${CONFIG_PATH}/aliases
