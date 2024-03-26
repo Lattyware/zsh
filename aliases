@@ -4,7 +4,7 @@ alias grep="grep --color=auto"
 if ! type "eza" > /dev/null; then
   alias ls="ls -l --color=auto --human-readable --group-directories-first --classify"
 else
-  alias ls='eza --long --git --classify --icons'
+  alias ls='eza --group --smart-group --long --git --classify --icons'
 fi
 
 if type "zoxide" > /dev/null; then
