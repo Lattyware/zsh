@@ -48,7 +48,7 @@ zstyle ':completion::complete:*' gain-privileges 1
 setopt COMPLETE_ALIASES
 
 autoload -Uz compinit
-compinit
+compinit -d "${XDG_CACHE_HOME}/zsh/zcompdump"
 
 # Add slashes when autocompleting directories.
 setopt AUTO_PARAM_SLASH
