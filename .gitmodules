@@ -4,3 +4,12 @@
 [submodule "tools/zsh-history-substring-search"]
 	path = tools/zsh-history-substring-search
 	url = https://github.com/zsh-users/zsh-history-substring-search.git
+[submodule "tools/zsh-syntax-highlighting"]
+	path = tools/zsh-syntax-highlighting
+	url = https://github.com/zsh-users/zsh-syntax-highlighting.git
+[submodule "tools/zsh-completions"]
+	path = tools/zsh-completions
+	url = https://github.com/zsh-users/zsh-completions.git
+[submodule "tools/zsh-autocomplete"]
+	path = tools/zsh-autocomplete
+	url = https://github.com/marlonrichert/zsh-autocomplete.git
