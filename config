@@ -20,6 +20,10 @@ path=("$path[@]")
 path+=("${HOME}/.local/bin")
 export PATH
 
+# Syntax highlighting.
+source ${CONFIG_PATH}/tools/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+# History searching.
+source ${CONFIG_PATH}/tools/zsh-history-substring-search/zsh-history-substring-search.zsh
 # Autocomplete.
 source ${CONFIG_PATH}/tools/zsh-autocomplete/zsh-autocomplete.plugin.zsh
 zstyle '*:compinit' arguments -d "${XDG_CACHE_HOME}/zsh/zcompdump"
@@ -60,11 +64,6 @@ autoload -Uz compinit
 # Add slashes when autocompleting directories.
 setopt AUTO_PARAM_SLASH
 unsetopt AUTO_REMOVE_SLASH
-
-# History searching.
-source ${CONFIG_PATH}/tools/zsh-history-substring-search/zsh-history-substring-search.zsh
-# Syntax highlighting.
-source ${CONFIG_PATH}/tools/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 
 bindkey -- "^[OA" history-substring-search-up
 bindkey -- "^[OB" history-substring-search-down
